@@ -6,7 +6,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 //aqui estamos definindo a nossa rota uttilizando metodo get que o app herdou do express, no primeiro argumento esta o endereço da nosssa rota, e no seguindo argumento esta a função que vai ser executada quando essa rota for chamada
-app.get("/", function (req, res){
+app.get("/", (req, res) => {
     //o res é o que vai retornar de resposta da chamada da rota com o método render que vai renderixar o nosso index que é o que esta como argumento nessa chamada. OBS: não há necessidade de colocar a extensão EJS pq já dizemos no app.set na linha 6 que estariamos trabalhando com arquivos do tipo EJS
     const items = [
         {
@@ -19,19 +19,19 @@ app.get("/", function (req, res){
         },
         {
             title: "M",
-            message: "uito fácil usar"
+            message: "uito fácil de usar"
         },
         {
             title: "A",
-            message: " Nota 10"
+            message: " Nota é 10"
         },
         {
             title: "I",
-            message: "nstall EJS"
+            message: "nstale o EJS"
         },
         {
             title: "S",
-            message: "sintaxe simples"
+            message: "intaxe simples"
         }
     ];
 
@@ -44,11 +44,14 @@ app.get("/", function (req, res){
 });
 
 //obs: o res e o req são parâmetros padôes recebidos por essa função 
-app.get("/sobre", function (req, res){
+app.get("/sobre", (req, res) => {
+
+    
+
     res.render("pages/about");
 });
 
 //o listen é o método/função que escuta uma porta, nesse caso a 8080, isso diz pro nosso servidor que ele esta rodando na nossa maquina e quando a gente chamar a porta 8080, ele chama tudo o que esta aqui 
-app.listen(8080);
+app.listen(3000);
 
 console.log("O Servidor está rodando!");
